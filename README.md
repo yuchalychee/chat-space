@@ -1,56 +1,39 @@
-## users_messageテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :message
-
-
-
-
-
-
-
 ## usersテーブル
-(新規登録)
-矢印が自分のところにあったら、has.to
-
 |Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|------|----|———|
+|email|string|null: false|
+|name|string|null: false|
+### Association 
+- has_many :groups
+- has_many :message
+has_many :groups, through: :groups_users
 
-### Association
+## groupテーブル
+|Column|Type|Options|
+|------|----|———|
+|name|string|null: false|
+### Association 
+- has_many :user
+- has_many :message
+has_many :users, through: :groups_users
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|———|
+|content|text|null: false|
+|image|text|null: false|
+|user|refarences|foreign_key: true
+|group|refarennces|foreign_key: true
+### Association 
+- belongs_to :group
 - belongs_to :user
 
-
-
-
-
-
-## messageテーブル
-（投稿する）
+## groups_usersテーブル 
 |Column|Type|Options|
 |------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
+|user|refarences|foreign_key: true|
+ |group|refarennces|foreign_key: true|
+### Association 
+- belongs_to :group 
+- belongs_to :user 
 
-### Association
-- belongs_to :message
-
-
-
-
-
-
-## groupsテーブル
-（）
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
