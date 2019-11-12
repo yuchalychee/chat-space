@@ -3,12 +3,12 @@
 	box-sizing: border-box;
 	color: white;
 	width: 300px;
-	.chat-side_header {
+  .chat-side_header {
     background-color: #253141;
     display: flex;
     align-items: center;
 		justify-content: space-between; 
-		.header__name {			
+	  .header__name {			
 			height: 100px;
 			line-height: 100px;
 			padding: 0 20px;
@@ -23,12 +23,12 @@
       }
     }
 	}
-	.groups {
+  .groups {
 		background-color: #2f3e51;
 		height: calc(100vh - 100px);
     padding: 20px 20px 0;
 		overflow: scroll;
-		.group {
+	  .group {
 			margin-bottom: 40px;
 		&__name {
 			font-size: 15px;
@@ -39,7 +39,7 @@
 		}
 	}
 }
-	.icon {
+  .icon {
 		color: white;
 	}
 }
