@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: "messages#index"
-<<<<<<< Updated upstream
+  resources :users, only: [:edit, :update]
 end
-=======
-end
->>>>>>> Stashed changes
