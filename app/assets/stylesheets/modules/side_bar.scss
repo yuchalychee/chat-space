@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
 	  justify-content: space-between; 
-	  .header__name {			
+	  .header__name {
 		  height: 100px;
 		  line-height: 100px;
 		  padding: 0 20px;
@@ -30,11 +30,14 @@
     overflow: scroll;
     .group {
       margin-bottom: 40px;
+      text-decoration: none;
     &__name {
+      color: white;
       font-size: 15px;
       margin-bottom: 5px;
     }
     &__message {
+      color: white;
       font-size: 11px;
     }
   }
