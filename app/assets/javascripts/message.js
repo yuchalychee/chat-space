@@ -9,6 +9,7 @@ $(function(){
                 <div class="lower-message">
                 ${message.content}
                 ${image}
+                </div>
     `
     return html;
   }
