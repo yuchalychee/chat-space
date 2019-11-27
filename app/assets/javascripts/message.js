@@ -56,9 +56,10 @@ $(function(){
       data: {id: last_massage_id}
     })
     .done(function(messages) {
+      console.log('success');
     })
     .fail(function() {
-      console.log('error');
+      alert.log('error');
     });    
   };
   setInterval(reloadMessages, 7000);
