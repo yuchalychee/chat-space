@@ -1,8 +1,6 @@
 $(function(){
   last_massage_id = $('.message:last').data('id')
   function buildHTML(message){
-
-    // var image = message.image?`<img src="${message.image}">`:  " "  ;
     var image = message.image == null ? "" : `<img src="${message.image} " id="lower-message__image" ">`
     var html = `<div class="message" data-message-id="${message.id}">
                 <div class="upper-message">
@@ -35,14 +33,10 @@ $(function(){
   .done(function(data){
     console.table(data)
     var html = buildHTML(data);
-    // $('.messages').append(html);
-    // $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     $('.messages').append(html);
       $("#new_message")[0].reset();
-      $('.form__box').val('')
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-
-    $('.form__submit').prop('disabled', false);
+      $('.form__submit').prop('disabled', false);
   })
   .fail(function() {
       alert("メッセージ送信に失敗しました");
@@ -62,7 +56,6 @@ $(function(){
       })
       // last_idの記述はコントローラー側要注意
       .done(function(messages){
-        console.log(messages)
         //追加するHTMLの入れ物を作る
         var insertHTML = '';
         //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
@@ -78,7 +71,6 @@ $(function(){
         }
       })
       .fail(function(i){
-        console.log(i)
         alert('上手く更新できていないだぉ！！')
       });
       }
