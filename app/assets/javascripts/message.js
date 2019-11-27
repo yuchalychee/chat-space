@@ -1,6 +1,5 @@
 $(function(){
   last_massage_id = $('.message:last').data('id')
-    // console.log(last_massage_id);  
   function buildHTML(message){
 
     var image = message.image?`<img src="${message.image}">`:  " "  ;
@@ -57,7 +56,6 @@ $(function(){
       data: {id: last_massage_id}
     })
     .done(function(messages) {
-      console.log('success');
     })
     .fail(function() {
       console.log('error');

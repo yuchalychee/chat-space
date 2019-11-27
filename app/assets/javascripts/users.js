@@ -9,7 +9,6 @@ $(document).on('turbolinks:load', function(){
               </div>
                `;
                $("#user-search-result").append(html);
-               console.log(html);
   }
 
   function addNoUser() {
@@ -19,7 +18,6 @@ $(document).on('turbolinks:load', function(){
               </div>
                `;
                $("#user-search-result").append(html);
-               console.log(html);
   }
 
   function addDeleteUser(name, id) {
@@ -52,7 +50,6 @@ $(document).on('turbolinks:load', function(){
 
   $("#user-search-field").on("keyup", function() {
     let input = $("#user-search-field").val();
-    console.log(input);
     $.ajax({
       type: "GET",
       url: "/users",
@@ -62,7 +59,6 @@ $(document).on('turbolinks:load', function(){
       .done(function(users) {
 
         $("#user-search-result").empty();
-        // console.log(users);
         if (users.length !== 0) {
           users.forEach(function(user) {
             addUser(user);
@@ -80,7 +76,6 @@ $(document).on('turbolinks:load', function(){
       });
    });
   $("#user-search-result").on("click", ".chat-group-user__btn--add", function() {
-    console.log
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
     $(this)
