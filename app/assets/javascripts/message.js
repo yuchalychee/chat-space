@@ -8,9 +8,10 @@ $(function(){
                   <div class="upper-message__date">${message.created_at}</div>
                 </div>
                 <div class="lower-message">
-                  ${message.content}
+                  <p lower-message__content>
+                    ${message.content}
+                  </p>
                   ${image}
-                </div>
                 </div>
                 `
     return html;
